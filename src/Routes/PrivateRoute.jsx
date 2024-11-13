@@ -11,7 +11,7 @@ function PrivateRoute() {
   useEffect(() => {
     const authCheck = async () => {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/auth/user-auth`,
+        `https://e-commerce-website-mern-new.vercel.app/api/v1/auth/user-auth`,
         { headers: { Authorization: auth?.token } }
       );
       if (res.data.ok) {
@@ -46,7 +46,7 @@ export default PrivateRoute;
 //     const authCheck = async () => {
 //       try {
 //         const res = await axios.get(
-//           `http://localhost:8000/api/v1/auth/user-auth`,
+//           `https://e-commerce-website-mern-new.vercel.app/api/v1/auth/user-auth`,
 //           { headers: { Authorization: auth?.token } }
 //         );
 //         setOk(res.data.ok);

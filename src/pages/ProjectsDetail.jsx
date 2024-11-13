@@ -20,7 +20,7 @@ function ProjectsDetail() {
   try {
     
     
-  const { data } = await axios.get(`http://localhost:8000/api/v1/product/related-product/${pid}/${cid}`);
+  const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/related-product/${pid}/${cid}`);
 
 
   setRelatedProducts(data.products)
@@ -42,7 +42,7 @@ const getSingleProduct =async ()=>{
     try {
         
 
-        const { data } = await axios.get(`http://localhost:8000/api/v1/product/getsingle-product/${params.slug}`);
+        const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/getsingle-product/${params.slug}`);
         setProduct(data?.product); // Assume the API returns a single product object
         getSimilarProduct(data?.product._id, data?.product.category._id);
     } catch (error) {
@@ -58,7 +58,7 @@ useEffect(()=>{
       <div className="row container">
         <div className="col-md-6 mt-5">
           <img
-            src={`http://localhost:8000/api/v1/product/product-photo/${product._id}`}
+            src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${product._id}`}
             className="card-img-top mt-3"
             alt={product.name}
             height={"500px"}
@@ -95,7 +95,7 @@ useEffect(()=>{
           {productRelated?.map((p) => (
             <div className="card w-50 m-2" key={p._id}>
               <img
-                src={p._id ? `http://localhost:8000/api/v1/product/product-photo/${p._id}` : ""}
+                src={p._id ? `https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${p._id}` : ""}
                 className="card-img-top"
                 alt={p.name}
               />

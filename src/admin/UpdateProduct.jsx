@@ -28,7 +28,7 @@ function UpdateProduct() {
 
 
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/product/getsingle-product/${params.slug}`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/getsingle-product/${params.slug}`);
       setName(data.product.name)
       setId(data.product._id)
       setDescription(data.product.description)
@@ -60,7 +60,7 @@ function UpdateProduct() {
       productData.append("quantity", quantity);
       productData.append("photo",photo)
       productData.append("category",category)
-      const { data } = await axios.put(`http://localhost:8000/api/v1/product/update-product/${id}`,productData);
+      const { data } = await axios.put(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/update-product/${id}`,productData);
       
       
       console.log(data);
@@ -82,7 +82,7 @@ function UpdateProduct() {
 
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/category/getAll-category`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/getAll-category`);
       if (data) {
         setCategories(data.category);
         console.log("Categories:", data.category);
@@ -101,7 +101,7 @@ function UpdateProduct() {
     e.preventDefault();
     try {
       const { data } = await axios.delete(
-        `http://localhost:8000/api/v1/product/delete-product/${id}`
+        `https://e-commerce-website-mern-new.vercel.app/api/v1/product/delete-product/${id}`
       );
       toast.success("Product Deleted  Successfully");
       navigate("/dashboard/admin/products");
@@ -181,7 +181,7 @@ function UpdateProduct() {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`http://localhost:8000/api/v1/product/product-photo/${id}`}
+                      src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${id}`}
                       alt="photo"
                       height={"300px"}
                       className="img img-responsive"

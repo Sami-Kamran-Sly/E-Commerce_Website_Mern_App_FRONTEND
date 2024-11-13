@@ -14,7 +14,7 @@ function AdminRoute() {
     useEffect(() => {
       const authCheck = async () => {
         const res = await axios.get(
-          `http://localhost:8000/api/v1/auth/admin-auth`,
+          `https://e-commerce-website-mern-new.vercel.app/api/v1/auth/admin-auth`,
           { headers: { Authorization: auth?.token } }
         );
         if (res.data.ok) {

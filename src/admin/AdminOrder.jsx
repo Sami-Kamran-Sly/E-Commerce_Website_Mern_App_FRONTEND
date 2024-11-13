@@ -21,7 +21,7 @@ function AdminOrder() {
   const [orders, setOders] = useState([]);
   const getOrders = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/auth/orders`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/auth/orders`);
 
       console.log("Orders data Where :", data);
       setOders(data.orders);
@@ -39,7 +39,7 @@ function AdminOrder() {
 
   const handleChange = async (orderId, value) => {
     try {
-      const { data } = await axios.put(`http://localhost:8000/api/v1/auth/order-status/${orderId}`, {
+      const { data } = await axios.put(`https://e-commerce-website-mern-new.vercel.app/api/v1/auth/order-status/${orderId}`, {
         status: value,
       });
       getOrders();

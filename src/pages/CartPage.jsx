@@ -67,7 +67,7 @@ const totalPrice = ()=>{
 
       const getToken = async () => {
         try {
-          const { data } = await axios.get(`http://localhost:8000/api/v1/product/braintree/token`);
+          const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/braintree/token`);
           console.log(data?.clientToken);
 
           console.log(data);
@@ -85,7 +85,7 @@ const totalPrice = ()=>{
         try {
           setLoading(true);
           const { nonce } = await instance.requestPaymentMethod();
-          const { data } = await axios.post(`http://localhost:8000/api/v1/product/braintree/payment`, {
+          const { data } = await axios.post(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/braintree/payment`, {
             nonce,
             cart,
           });
@@ -132,7 +132,7 @@ const totalPrice = ()=>{
                 <div className="row m-2 card flex-row " key={index}>
                   <div className="col-md-6">
                     <img
-                      src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`}
+                      src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${p._id}`}
                       className="card-img-top"
                       alt={p.name}
                       width={"200px"}

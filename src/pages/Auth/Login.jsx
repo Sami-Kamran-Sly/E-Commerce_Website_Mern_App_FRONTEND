@@ -22,7 +22,7 @@ const Login = memo(()=> {
         e.preventDefault()
     
         try {
-          const res = await axios.post(`http://localhost:8000/api/v1/auth/login`, {
+          const res = await axios.post(`https://e-commerce-website-mern-new.vercel.app/api/v1/auth/login`, {
             email,
             password,
           });

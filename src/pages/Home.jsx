@@ -35,7 +35,7 @@ function Home() {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://localhost:8000/api/v1/product/product-list/${page}`
+        `https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts([...products, ...data?.products]);
@@ -49,7 +49,7 @@ function Home() {
 
   const getAllProduct = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-list/${page}`);
 
       if (data?.success) {
         setProducts(data.products);
@@ -67,7 +67,7 @@ function Home() {
   
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/category/getAll-category`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/getAll-category`);
       if (data) {
         setCategory(data.category);
       }
@@ -78,7 +78,7 @@ function Home() {
 
   const getTotal = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/product/product-count`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-count`);
       setTotal(data.total); // Correct line to set total
       console.log(data.total, `Total is ${data.total}`); 
     } catch (error) {
@@ -93,7 +93,7 @@ function Home() {
     console.log("Checked categories:", checked); // Debugging
     console.log("Price range:", radio); // Debugging
     try {
-      const { data } = await axios.post(`http://localhost:8000/api/v1/product/product-filter`, {
+      const { data } = await axios.post(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-filter`, {
         checked,
         radio,
 
@@ -242,7 +242,7 @@ function Home() {
 
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                  src={`http://localhost:8000/api/v1/product/product-photo/${p?._id}`}
+                  src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${p?._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

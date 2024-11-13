@@ -24,7 +24,7 @@ function CreateProduct() {
 
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/category/getAll-category`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/getAll-category`);
       if (data) {
         setCategories(data.category)
         console.log("Categories:", data.category);
@@ -45,7 +45,7 @@ function CreateProduct() {
       formData.append("description", description);
       formData.append("category", category);
       formData.append("photo", photo);
-      const { data } = await axios.post(`http://localhost:8000/api/v1/product/create-product`,formData);
+      const { data } = await axios.post(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/create-product`,formData);
       if (data?.success) {
         toast.success("Product Created Successfully Today");
         navigate("/dashboard/admin/products");

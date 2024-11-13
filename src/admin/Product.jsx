@@ -12,7 +12,7 @@ const navigate = useNavigate()
   const getAllProduct = async (e) => {
     try {
      
-      const { data } = await axios.get(`http://localhost:8000/api/v1/product/getAll-products`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/product/getAll-products`);
       if (data?.success) {
         console.log(data.products)
         setProducts(data.products)
@@ -47,7 +47,7 @@ const navigate = useNavigate()
             >
               <div className="card m-2" style={{ width: "18rem" }}>
                 <img
-                  src={`http://localhost:8000/api/v1/product/product-photo/${p?._id}`}
+                  src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${p?._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

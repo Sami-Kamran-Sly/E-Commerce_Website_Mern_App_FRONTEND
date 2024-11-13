@@ -31,7 +31,7 @@ return (
     style={{ width: "18rem" }}
   >
     <img
-      src={`http://localhost:8000/api/v1/product/product-photo/${p._id}`}
+      src={`https://e-commerce-website-mern-new.vercel.app/api/v1/product/product-photo/${p._id}`}
       className="card-img-top"
       alt={p.name}
     />

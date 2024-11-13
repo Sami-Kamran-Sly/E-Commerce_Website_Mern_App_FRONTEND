@@ -11,7 +11,7 @@ function SearchInput() {
         e.preventDefault()
         try {
             const { data } = await axios.get(
-                `http://localhost:8000/api/v1/product/search/${auth.keyword}`
+                `https://e-commerce-website-mern-new.vercel.app/api/v1/product/search/${auth.keyword}`
               );
 
               setAuth({...auth, results:data})

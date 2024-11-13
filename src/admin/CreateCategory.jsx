@@ -18,7 +18,7 @@ function CreateCategory() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`http://localhost:8000/api/v1/category/create-category`, {
+      const { data } = await axios.post(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/create-category`, {
         name,
       });
 
@@ -38,7 +38,7 @@ function CreateCategory() {
 
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/category/getAll-category`);
+      const { data } = await axios.get(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/getAll-category`);
       if (data) {
         setCategory(data.category);
         console.log("Categories:", data.category);
@@ -57,7 +57,7 @@ function CreateCategory() {
 
     try {
       
-      const {data} =  await axios.put(`http://localhost:8000/api/v1/category/update-category/${selected._id}`, {
+      const {data} =  await axios.put(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/update-category/${selected._id}`, {
         name: updatedName
       })
 
@@ -74,7 +74,7 @@ function CreateCategory() {
 
   const deleteAllCategory = async (id) => {
     try {
-      const { data } = await axios.delete(`http://localhost:8000/api/v1/category/delete-category/${id}`);
+      const { data } = await axios.delete(`https://e-commerce-website-mern-new.vercel.app/api/v1/category/delete-category/${id}`);
       if (data) {
         getAllCategory()
       }
